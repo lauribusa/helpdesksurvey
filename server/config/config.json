@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "lauri",
+    "password": "hctmd000ang",
+    "database": "database_dev",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "lunanvsk",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

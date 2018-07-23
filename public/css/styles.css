@@ -1,0 +1,209 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* END OF RESET */
+body{
+    font-family: 'Roboto', sans-serif;
+	
+	background-image: linear-gradient(to right, #4facfe 0%, #337ab7 100%);
+}
+h1{
+    font-size: 65px;
+    font-weight: 100;
+}
+.formContainer{
+    padding-top: 40px;
+    text-align: center;
+}
+@keyframes shadow-inset-center {
+	0% {
+	  box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+	100% {
+	  box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
+	}
+  }
+.textInput {
+	margin-top: 40px;
+	width: 475px;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 20px 10px;
+	text-align: center;
+	background: rgb(231,231,231);
+	border: 0 solid #ADD2C2;
+	border-top: 1px solid rgb(96, 116, 107);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 18px;
+	font-weight: 300;
+	color: rgba(17,17,17,1);
+	-o-text-overflow: clip;
+	text-overflow: ellipsis;
+  }
+  .textInput:focus{
+	  animation: shadow-inset-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+*::placeholder {
+   color: rgb(48, 48, 48, 0.5);
+}
+
+@keyframes border {
+	0% {
+	  border-radius: 15px;
+	}
+	33%{
+		border-radius:17px;
+	}
+	50%{
+		border-radius: 1px;
+	}
+	66%{
+		border-radius: 5px;
+	}
+	88%{
+		border-radius:7px;
+	}
+	100% {
+	  border-radius: 5px;
+	}
+  }
+
+.button{
+	margin-top: 50px;
+	height:45px;
+	width: 155px;
+	border-radius: 20px;
+	font-size: 15px;
+	font-weight: 300;
+	background: none;
+	border: 1px solid whitesmoke;
+	color: whitesmoke;
+	transition: all 0.2s;
+	transition-timing-function: ease;
+	opacity: 0.7;
+}
+.button:hover{
+	margin-top: 50px;
+	border-radius: 5px;
+	opacity: 0.9;
+	/*animation: border 0.7s ease-in 1;*/
+}
+.button:active{
+	animation: shadow-inset-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	opacity:0.9;
+}
+.button:focus{
+	margin-top: 50px;
+	border-radius: 5px;
+	opacity: 0.9;
+}
+*:focus{
+	outline: 0;
+}
+
+.error{
+	color:red;
+	font-weight: 700;
+}
+
+/* CHART CSS */
+
+.chartContainer{
+	height: 600px;
+	width: 400px;
+	margin: 0 auto;
+}
+
+.item{
+	padding: 10px;
+}
+
+a.carousel-control.right{
+	background: none;
+	right: -180px;
+}
+a.carousel-control.left{
+	background: none;
+	left: -180px;
+}
+
+.carousel-indicators{
+	bottom: -10px;
+}
+.listIncident{
+	margin-top: 25px;
+}
+#incidents-table{
+	background: rgb(231, 231, 231);
+}
+#incidents-table span{
+	float: right;
+}
+
+.top10{
+	height: 580px;
+	text-align:center;
+}
+
+h2{
+    font-size: 55px;
+	font-weight: 100;
+	margin-bottom: 20px;
+}
+
+.charts{
+	background: rgba(240,240,240,0.9);
+}
+.refresh{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
