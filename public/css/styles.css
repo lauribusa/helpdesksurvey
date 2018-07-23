@@ -136,7 +136,8 @@ h1{
 	/*animation: border 0.7s ease-in 1;*/
 }
 .button:active{
-	animation: shadow-inset-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	color: orange;
+	border: 1px solid orange;
 	opacity:0.9;
 }
 .button:focus{

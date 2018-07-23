@@ -122,8 +122,6 @@ module.exports = {
             const issues = await Issue.findAll();
             const symptoms = await Symptom.findAll();
             res.locals.refresh = true;
-            return res.render('index', {symptoms: symptoms, solutions: solutions, issues: issues, clients: clients, refresh: res.locals.refresh});
-        } else {
             const zebrix = await asyncCall().then(result=>{
                 return result;
             });
@@ -140,11 +138,11 @@ module.exports = {
             } catch (err){
                 throw err
             }
+            return res.render('index', {symptoms: symptoms, solutions: solutions, issues: issues, clients: clients, refresh: res.locals.refresh});
+        } else {
+            
             next();
         }
-        /*
-        
-        res.redirect('/');*/
     },
     async list(req,res){
         const currentDate = new Date();

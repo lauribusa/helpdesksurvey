@@ -6,3 +6,4 @@ app.set('port', port);
 
 const server = http.createServer(app);
 server.listen(port);
+console.log("Server online and listening to http://localhost:"+port);
