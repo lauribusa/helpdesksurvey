@@ -178,12 +178,31 @@ h1{
 }
 
 .timerContainer{
-	position:absolute;
-	left: -50px;
+	width: 475px;
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
 }
-.timerContainer span{
-	margin-top: 25px;
+.timerContainer i{
+	position: absolute;
+	color: whitesmoke;
+	top: 40px;
+	right: 48%;
+	margin-right: 15px;
 	font-size: 25px;
+	transition: all 0.3s;
+}
+.timerContainer i:first-of-type{
+	right: 40%;
+}
+.timerContainer input{
+	width: 300px;
+	text-align: center;
+	left: 33%;
+}
+.timerContainer i:hover{
+	color: orange;
+	cursor: pointer;
 }
 /* CHART CSS */
 
