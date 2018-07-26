@@ -74,6 +74,7 @@ module.exports = {
         return res.render('index', {symptoms: symptoms, solutions: solutions, issues: issues, clients: clients, valid: res.locals.valid, refresh: res.locals.refresh});
     },
     create(req,res, next){
+        console.log("Creating incident:",req.body);
         let NclientId = parseInt(req.body.clientId);
         let NsymptomId = parseInt(req.body.symptomId);
         let NissueId = parseInt(req.body.issueId);
