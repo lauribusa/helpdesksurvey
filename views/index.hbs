@@ -18,7 +18,7 @@
                     <form action="/" method="POST" enctype="application/x-www-form-urlencoded" id="incident">
                       <div class="inputContainer">
                         <span>Début de l'appel</span>
-                        <input autofocus type="text" id="client" class="textInput" placeholder="Qui appelle ?" name="clientName" value={{client.name}}""><br>
+                        <input autofocus type="text" id="client" class="textInput" placeholder="Qui appelle ?" name="clientName" value={{client.name}}"" data-lpignore="true"><br>
                         <label for="client">
                           <input type="hidden" id="clientId" name='clientId' value={{incident.clientId}}><br>
                         </label><br>
