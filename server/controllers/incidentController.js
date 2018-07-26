@@ -78,12 +78,14 @@ module.exports = {
         let NsymptomId = parseInt(req.body.symptomId);
         let NissueId = parseInt(req.body.issueId);
         let NsolutionId = parseInt(req.body.solutionId);
+        let nTime = (req.body.timer);
 
         Incident.create({
             clientId: NclientId,
             symptomId: NsymptomId,
             issueId: NissueId,
             solutionId: NsolutionId,
+            time: nTime,
         })
         .then(incident=> {
             res.locals.valid = true;
@@ -99,6 +101,7 @@ module.exports = {
         req.checkBody('symptomId', "Veuillez entrer un symptôme correct (utilisez l'autocomplete)").notEmpty();
         req.checkBody('issueId', "Veuillez entrer une cause correcte (utilisez l'autocomplete)").notEmpty();
         req.checkBody('solutionId', "Veuillez entrer une solution correcte (utilisez l'autocomplete").notEmpty();
+        req.checkBody('timer',"Temps non valide").notEmpty();
         
         let errors = await req.validationErrors();
 
@@ -115,7 +118,7 @@ module.exports = {
         }
     },
     async refreshDB(req,res,next){
-
+        console.log("INFO FROM REQ: ",req.body);
         if(req.body.refresh){
             const clients = await Client.findAll();
             const solutions = await Solution.findAll();

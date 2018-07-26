@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HelpDesk Survey</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet"> 
@@ -16,23 +16,33 @@
                   <div class="col-lg formContainer">
                     <h1 style="color: white">Help Desk Survey</h1><br>
                     <form action="/" method="POST" enctype="application/x-www-form-urlencoded" id="incident">
-                      <input autofocus type="text" id="client" class="textInput" placeholder="Client" name="clientName" value={{client.name}}""><br>
-                      <label for="client">
-                        <input type="hidden" id="clientId" name='clientId' value={{incident.clientId}}><br>
-                      </label><br>
-                      <input type="text" id="symptom" class="textInput" placeholder="Symptôme"><br>
-                      <label for="symptom">
-                        <input type="hidden" id="symptomId" name="symptomId" value={{incident.symptomId}}>
-                      </label><br>
-                      <input type="text" id="issue" class="textInput" placeholder="Cause"></br>
-                      <label for="issue">
-                        <input type="hidden" id="issueId" name="issueId" value={{incident.issueId}}><br>
-                      </label><br>
-                      <input type="text" id="solution" class="textInput" placeholder="Solution"></br>
-                      <label for="solution">
-                        <input type="hidden" id="solutionId" name="solutionId" value={{incident.solutionId}}><br>
-                      </label><br>
-                      <input type="submit" class="button" value="Valider" id="hideMe">
+                      <div class="inputContainer">
+                        <span>Début de l'appel</span>
+                        <input autofocus type="text" id="client" class="textInput" placeholder="Qui appelle ?" name="clientName" value={{client.name}}""><br>
+                        <label for="client">
+                          <input type="hidden" id="clientId" name='clientId' value={{incident.clientId}}><br>
+                        </label><br>
+                        <input type="text" id="symptom" class="textInput" placeholder="Quelle est la raison de l'appel?"><br>
+                        <label for="symptom">
+                          <input type="hidden" id="symptomId" name="symptomId" value={{incident.symptomId}}>
+                        </label><br>
+                      </div>
+                      <div class="inputContainer">
+                        <span>Fin de l'appel</span>
+                        <input type="text" id="issue" class="textInput" placeholder="Quelle était la source réelle de l'appel ?"></br>
+                        <label for="issue">
+                          <input type="hidden" id="issueId" name="issueId" value={{incident.issueId}}><br>
+                        </label><br>
+                        <input type="text" id="solution" class="textInput" placeholder="Quel est la solution/conclusion donnée à cet appel ?"></br>
+                        <label for="solution">
+                          <input type="hidden" id="solutionId" name="solutionId" value={{incident.solutionId}}><br>
+                        </label><br>
+                        <div class="timerContainer">
+                          <input type="text" name="timer" id="timer" class="timer" placeholder="0 sec">
+                          <span id="pause-timer" class="glyphicon glyphicon-pause"></span><span id="resume-timer" class="glyphicon glyphicon-play"></span>
+                        </div>
+                        <input type="submit" class="button" value="Valider" id="hideMe">
+                      </div></div>
                     </form>
                     <form action="/" method="POST" enctype="application/x-www-form-urlencoded" class="refresh">
                       <input type='hidden' name="refresh" value="true">
@@ -41,9 +51,11 @@
                   </div>
                 </div>
               </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="external/jquery/jquery.js"></script>
     <script src="js/notify.min.js"></script>
     <script src="jquery-ui.js"></script>
+    <script src="timer.jquery.min.js"></script>
     <script>
       {{#if valid}}
           $.notify("Incident soumis", { className: 'success', position:"top center", autoHideDelay: 2000 });
@@ -56,7 +68,11 @@
           $.notify({{{stringify error.msg}}}, { className: 'error', position:"top center", autoHideDelay: 2000 });
         {{/each}}
       {{/if}}
-      
+
+      $('#timer').timer({
+        editable: true,
+      });
+
       $(function() {
                 $('#incident').each(function() {
                     $(this).find('input').keypress(function(e) {
@@ -119,6 +135,7 @@
 
       $('#client').autocomplete({
         source: clientArray,
+        minLength: 3, 
         select: (event, ui)=>{
           $('#clientId').val(ui.item.id);
         }
@@ -144,7 +161,12 @@
           $('#solutionId').val(ui.item.id);
         }
       });
-
+      $('#resume-timer').on('click', function() {
+				$('#timer').timer('resume');
+			});
+      $('#pause-timer').on('click', function() {
+				$('#timer').timer('pause');
+			});
     </script>
 </body>
 </html>

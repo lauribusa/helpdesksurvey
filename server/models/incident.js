@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Incident = sequelize.define('Incident', {
-
+    time: DataTypes.STRING,
   }, {});
   Incident.associate = function(models) {
     Incident.belongsTo(models.Client,{

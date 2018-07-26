@@ -83,6 +83,7 @@
                 <th>Symptôme<span class="glyphicon glyphicon-sort"></span></th>
                 <th>Cause<span class="glyphicon glyphicon-sort"></span></th>
                 <th>Date<span class="glyphicon glyphicon-sort"></span></th>
+                <th>Time<span class="glyphicon glyphicon-sort"></span></th>
             </tr>
         </thead>
         <tbody>
@@ -90,7 +91,8 @@
                 <td>{{incident.clients.name}}</td> 
                 <td>{{incident.symptoms.name}}</td>
                 <td>{{incident.issues.name}}</td>
-                <td>{{incident.createdAt}}</td></tr>
+                <td>{{incident.createdAt}}</td>
+                <td>{{incident.time}}</td></tr>
             {{/each}}
         </tbody>
     </table>

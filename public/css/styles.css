@@ -69,7 +69,6 @@ h1{
 	}
   }
 .textInput {
-	margin-top: 40px;
 	width: 475px;
 	display: inline-block;
 	box-sizing: border-box;
@@ -154,6 +153,38 @@ h1{
 	font-weight: 700;
 }
 
+.inputContainer{
+	padding: 25px 20px;
+	width: 550px;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	position: relative;
+}
+.inputContainer span{
+	position: absolute;
+	top: 5px;
+	left: 40px;
+	color: rgba(255,255,255,0.6);
+}
+#resume-timer{
+	margin-left: 25px;
+}
+.timer{
+	background: 0;
+	border: 0;
+	font-size: 25px;
+	font-weight:100;
+	color: whitesmoke;
+}
+
+.timerContainer{
+	position:absolute;
+	left: -50px;
+}
+.timerContainer span{
+	margin-top: 25px;
+	font-size: 25px;
+}
 /* CHART CSS */
 
 .chartContainer{
@@ -203,8 +234,9 @@ h2{
 	background: rgba(240,240,240,0.9);
 }
 .refresh{
+	float:right;
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 200px;
 }
 
