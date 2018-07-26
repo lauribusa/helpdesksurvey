@@ -22,23 +22,23 @@
                         <label for="client">
                           <input type="hidden" id="clientId" name='clientId' value={{incident.clientId}}><br>
                         </label><br>
-                        <input type="text" id="symptom" class="textInput" placeholder="Quelle est la raison de l'appel?"><br>
+                        <input type="text" id="symptom" class="textInput" placeholder="Quelle est la raison de l'appel?" data-lpignore="true"><br>
                         <label for="symptom">
                           <input type="hidden" id="symptomId" name="symptomId" value={{incident.symptomId}}>
                         </label><br>
                       </div>
                       <div class="inputContainer">
                         <span>Fin de l'appel</span>
-                        <input type="text" id="issue" class="textInput" placeholder="Quelle était la source réelle de l'appel ?"></br>
+                        <input type="text" id="issue" class="textInput" placeholder="Quelle était la source réelle de l'appel ?" data-lpignore="true"></br>
                         <label for="issue">
                           <input type="hidden" id="issueId" name="issueId" value={{incident.issueId}}><br>
                         </label><br>
-                        <input type="text" id="solution" class="textInput" placeholder="Quel est la solution/conclusion donnée à cet appel ?"></br>
+                        <input type="text" id="solution" class="textInput" placeholder="Quel est la solution/conclusion donnée à cet appel ?" data-lpignore="true"></br>
                         <label for="solution">
                           <input type="hidden" id="solutionId" name="solutionId" value={{incident.solutionId}}><br>
                         </label><br>
                         <div class="timerContainer">
-                          <input type="text" name="timer" id="timer" class="timer" placeholder="0 sec">
+                          <input type="text" name="timer" id="timer" class="timer" placeholder="0 sec" data-lpignore="true">
                           <span id="pause-timer" class="glyphicon glyphicon-pause"></span><span id="resume-timer" class="glyphicon glyphicon-play"></span>
                         </div>
                         <input type="submit" class="button" value="Valider" id="hideMe">
