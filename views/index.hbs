@@ -52,13 +52,13 @@
                 </div>
               </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="external/jquery/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/notify.min.js"></script>
     <script src="jquery-ui.js"></script>
     <script src="timer.jquery.min.js"></script>
     <script>
       {{#if valid}}
-          $.notify("Incident soumis", { className: 'success', position:"top center", autoHideDelay: 2000 });
+        $.notify("Incident soumis", { className: 'success', position:"top center", autoHideDelay: 2000 });
       {{/if}}
       {{#if refresh}}
         $.notify("Clients récupérés", {className: 'success', position: "top center", autoHideDelay: 2000});
