@@ -72,6 +72,7 @@
       $('#timer').timer({
         editable: true,
       });
+       $('#timer').timer('pause');
 
       $(function() {
                 $('#incident').each(function() {
@@ -138,6 +139,7 @@
         minLength: 3, 
         select: (event, ui)=>{
           $('#clientId').val(ui.item.id);
+          $('#timer').timer('resume');
         }
       });
 
@@ -161,6 +163,7 @@
           $('#solutionId').val(ui.item.id);
         }
       });
+     
       $('#resume-timer').on('click', function() {
 				$('#timer').timer('resume');
 			});
