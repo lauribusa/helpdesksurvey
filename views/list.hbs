@@ -23,7 +23,7 @@
 </head>
 <body>
 <div class="container charts formContainer">
-    <h1>Incident Charts</h1>
+    <h1>Chartes d'incidents</h1>
     <form action="/list" id='dateSelect' method="POST" enctype="application/x-www-form-urlencoded">
         <div>
             <label for="month">Incidents à partir de:
@@ -48,18 +48,21 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class='item active'>
+            <h2>Nombre d'appels</h2>
             <canvas id='call'></canvas>
         </div>
         <div class='item top10'>
-            <h2>Top 10 callers</h2>
+            <h2>Top 10 des appels</h2>
             {{#each clientOccurence as |this|}}
-                <span>{{this.clients.name}} {{stringify this.count}}</span><br><br>
+                <span>{{this.clients.name}} {{this.count}}</span><br><br>
             {{/each}}
         </div>
         <div class='item '>
+            <h2>Fréquence des symptômes</h2>
             <canvas id='symptom'></canvas>
         </div>
         <div class="item ">
+            <h2>Fréquence des causes</h2>
             <canvas id='causes'></canvas>
         </div>
     </div>
