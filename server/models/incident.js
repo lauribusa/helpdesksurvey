@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   Incident.associate = function(models) {
     Incident.belongsTo(models.Client,{
       foreignKey: 'clientId',
-      as: 'clients'
+      as: 'clients',
     })
     Incident.belongsTo(models.Solution,{
       foreignKey: 'solutionId',
